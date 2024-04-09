@@ -6,6 +6,7 @@ import SignUp from './pages/SignUp'
 import Search from './pages/Search'
 import Header from './components/Header';
 import Projects from './pages/Projects';
+import Footer from './components/Footer';
 
 
 export default function App() {
@@ -20,9 +21,11 @@ export default function App() {
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/search' element={<Search />} />
       <Route path='/projects' element={<Projects />} />
+      
 
 
     </Routes>
+    <Footer />
     </BrowserRouter>
 
   );
