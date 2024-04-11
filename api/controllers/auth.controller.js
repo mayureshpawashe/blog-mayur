@@ -2,7 +2,6 @@ import react from "react"
 import User from '../models/user.model.js';
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
 import { access } from "fs";
 import { errorHandler } from '../utils/error.js';
 
