@@ -3,7 +3,7 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import { signInStart , signInFailure,signoutSuccess, signInSuccess } from '../redux/user/userSlice';
 import {useDispatch , useSelector} from 'react-redux';
-//import OAuth from '../components/OAuth';
+import OAuth from '../components/OAuth';
 export default function SignIn() 
 {
   
@@ -85,6 +85,7 @@ export default function SignIn()
             <Button gradientDuoTone='purpleToPink' type='submit'>
                 Sign-In
             </Button>
+            <OAuth></OAuth>
           </form>
 
           <div className='flex gap-2 text-sm mt-5'>
