@@ -9,7 +9,7 @@ import authRoutes from './routes/auth.route.js';
 
 //databse connection 
 dotenv.config();
-mongoose.connect('mongodb+srv://mayur:mayur@mern-blog.wo8zrga.mongodb.net/mern-blog?retryWrites=true&w=majority&appName=mern-blog').then(() => {
+mongoose.connect(process.env.MONGO).then(() => {
     console.log('MongoDb is connected');
   })
   .catch((err) => {
