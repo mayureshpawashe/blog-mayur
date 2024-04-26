@@ -7,7 +7,7 @@ import Search from './pages/Search'
 import Header from './components/Header';
 import Projects from './pages/Projects';
 import Footer from './components/Footer';
-
+import Dashboard from './pages/Dashboard';
 
 export default function App() {
   return (
@@ -21,6 +21,8 @@ export default function App() {
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/search' element={<Search />} />
       <Route path='/projects' element={<Projects />} />
+      <Route path='/dashboard' element={<Dashboard/>} />
+
       
 
 
