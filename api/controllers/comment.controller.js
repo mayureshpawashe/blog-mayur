@@ -2,7 +2,7 @@ import Comment from '../models/comment.model.js';
 
 
 
-//create comment api
+//create comment controller
 export const createComment = async (req, res, next) => {
   try {
     const { content, postId, userId } = req.body;
@@ -28,7 +28,7 @@ export const createComment = async (req, res, next) => {
 
 
 
-//get post comments api 
+//get post comments controller 
 export const getPostComments = async (req, res, next) => {
   try {
     const comments = await Comment.find({ postId: req.params.postId }).sort({
@@ -40,7 +40,7 @@ export const getPostComments = async (req, res, next) => {
   }
 };
 
-//like 
+//like comment controller
 export const likeComment = async (req, res, next) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
@@ -61,3 +61,28 @@ export const likeComment = async (req, res, next) => {
     next(error);
   }
 };
+
+
+//edit comment controller
+export const editComment = async (req, res, next) => {
+  try {
+    const comment = await Comment.findById(req.params.commentId);
+    if (!comment) {
+      return next(errorHandler(404, 'Comment not found'));
+    }
+    if (comment.userId !== req.user.id && !req.user.isAdmin) {
+      return next(errorHandler(403, 'You are not allowed to edit this comment'));
+    }
+
+    const editedComment = await Comment.findByIdAndUpdate(
+      req.params.commentId,
+      {
+        content: req.body.content,
+      },
+      { new: true }
+    );
+    res.status(200).json(editedComment)
+  } catch (error) {
+    next(error);
+  }
+}
