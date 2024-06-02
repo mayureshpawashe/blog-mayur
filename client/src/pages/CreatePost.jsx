@@ -106,9 +106,14 @@ export default function CreatePost() {
             <option value='javascript'>JavaScript</option>
             <option value='reactjs'>React.js</option>
             <option value='nextjs'>Next.js</option>
-            <option value='nextjs'>AWS</option>
-            <option value='nextjs'>Azure</option>
-            <option value='nextjs'>Devops</option>
+            <option value='aws'>AWS</option>
+            <option value='azure'>Azure</option>
+            <option value='devops'>Devops</option>
+            <option value='cloudcomputing'>Cloud-Computing</option>
+            <option value='mongo'>Mongo</option>
+            <option value='certifications'>Certification</option>
+            
+
 
           </Select>
         </div>
